@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block javascript %}
+
+    <script type="text/javascript">var switchTo5x = true;</script>
+    <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({
+        publisher: "43809fb5-3fc0-4fea-8d60-90871c29b713",
+        doNotHash: false,
+        doNotCopy: false,
+        hashAddressBar: false
+    });</script>
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group has-success has-feedback">
+                            <div class="input-group">
+                                <span class="input-group-addon">input</span>
+                                <input type="text" class="form-control" id="inputGroupSuccess3"
+                                       aria-describedby="inputGroupSuccess3Status" value="{{ url.url }}">
+                            </div>
+
+                            <span id="inputGroupSuccess3Status" class="sr-only">(success)</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group has-success has-feedback">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="inputGroupSuccess3"
+                                       aria-describedby="inputGroupSuccess3Status" value="{{ request.META.HTTP_HOST }}/{{ url.slug.slug }}">
+                                <span class="input-group-addon">output</span>
+                            </div>
+                            <span id="inputGroupSuccess3Status" class="sr-only">(success)</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="jumbotron list-content">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 col-lg-offset-3">
+                    <section class="panel sharing_panel">
+                        <span class='st_facebook_hcount' displayText='Facebook'></span>
+                        <span class='st_twitter_hcount' displayText='Tweet'></span>
+                        <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+                        <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+                        <span class='st_email_hcount' displayText='Email'></span>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <section class="panel">
+                        <div class="icon-content facebook">
+                            <i class="glyphicons "></i>
+                        </div>
+                        <div class="value">
+                            <h1 class="count text-center">{{ url.created|timesince }} ago</h1>
+
+                            <p class="pull-right">ago</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <section class="panel">
+                        <div class="icon-content google-plus">
+                            <i class="fa fa-google-plus"></i>
+                        </div>
+                        <div class="value">
+                            <h1 class="count text-center">{{ url.slug.slug }}</h1>
+
+                            <p class="pull-right">choosen slug</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
