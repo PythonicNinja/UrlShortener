@@ -17,8 +17,12 @@ class UrlInput(CreateView):
     template_name = 'shorter/url_input.html'
 
     def form_invalid(self, form):
-        self.object, created = Url.objects.get_or_create(**{'url': form['url'].value()})
-        return HttpResponseRedirect(self.get_success_url())
+        url = form['url'].value()
+        if url:
+            self.object, created = Url.objects.get_or_create(**{'url': url})
+            return HttpResponseRedirect(self.get_success_url())
+        else:
+            super(UrlInput, self).form_invalid(form)
 
 
 class UrlDetail(DetailView):
