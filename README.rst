@@ -3,11 +3,17 @@ URL shortener django
 
 .. image:: https://i.imgur.com/IKxe077.png
     :alt: URL shortener django
-    :width: 679
-    :height: 781
-    :align: center
+    :width: 100
+    :height: 100
+    :align: left
 
 URL shortener similar to http://bit.ly.
+
+.. image:: http://i.imgur.com/feMpZ7P.png
+    :alt: Screenshot of result
+    :width: 600
+    :height: 400
+    :align: center
 
 
 Getting up and running
