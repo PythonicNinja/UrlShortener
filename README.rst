@@ -13,15 +13,17 @@ URL shortener similar to http://bit.ly.
 Getting up and running
 ----------------------
 
-The steps below will get you up and running with a local environment. We assume you have the following installed:
+The steps below will get you up and running with a local environment. I assume you have the following installed:
 
 * pip
 * virtualenv
 
 
-First make sure to create and activate a virtualenv_, then open a terminal at the project root and install the requirements for local development::
+First make sure to create and activate a virtualenv
 
     $ virtualenv env
+
+Install the requirements for local development::
 
     $ pip install -r requirements/local.txt
 
