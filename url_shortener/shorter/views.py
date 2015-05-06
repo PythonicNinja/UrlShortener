@@ -22,7 +22,7 @@ class UrlInput(CreateView):
             self.object, created = Url.objects.get_or_create(**{'url': url})
             return HttpResponseRedirect(self.get_success_url())
         else:
-            super(UrlInput, self).form_invalid(form)
+            return super(UrlInput, self).form_invalid(form)
 
 
 class UrlDetail(DetailView):
